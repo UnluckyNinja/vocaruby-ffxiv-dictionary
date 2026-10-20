@@ -1,0 +1,26 @@
+{
+  "name": "vocaruby-ffxiv-dictionary",
+  "version": "0.0.0",
+  "description": "generate dictionary from ffxiv data for vocabulary ruby",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate": "node ./scripts/main.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "UnluckyNinja",
+  "license": "MIT",
+  "packageManager": "pnpm@12.14.0+sha512.c18ba6d87993d3d164cb5e8948f32b2c06ee854487e06cd8d86781342fb3e5bb4634367034711e86802baa9c37bea906ce1929ad08d70884c97d801df13389a6",
+  "devDependencies": {
+    "@types/d3-dsv": "^3.0.7",
+    "@types/node": "^24.13.3",
+    "typescript": "^6.0.3"
+  },
+  "dependencies": {
+    "d3-dsv": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=22.18.0"
+  }
+}
