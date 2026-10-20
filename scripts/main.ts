@@ -18,13 +18,15 @@ async function main() {
     
     const en_cn = generateDictionary(name, text_en, text_cn)
     if (en_cn) {
-      writeFile(join(outDir, `${name}_dictionary_en-cn.csv`), en_cn.text)
+      const filename = `${name}_dictionary_en-cn.csv`
+      writeFile(join(outDir, filename), en_cn.text)
       dupes_en.push(...en_cn.dupes.values())
     }
     const text_ja = await fetchContent(name, 'ja')
     const ja_cn = generateDictionary(name, text_ja, text_cn)
     if (ja_cn) {
-      writeFile(join(outDir, `${name}_dictionary_ja-cn.csv`), ja_cn.text)
+      const filename = `${name}_dictionary_ja-cn.csv`
+      writeFile(join(outDir, filename), ja_cn.text)
       dupes_ja.push(...ja_cn.dupes.values())
     }
   }

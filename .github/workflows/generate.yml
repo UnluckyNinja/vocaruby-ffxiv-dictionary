@@ -1,0 +1,36 @@
+name: Generate files
+
+on:
+  workflow_dispatch:
+
+jobs:
+  generate:
+    name: Generate
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      id-token: write
+
+    steps:
+      - name: Setup JS
+        uses: sxzz/workflows/setup-js@main
+        with:
+          fetch-all: true
+          cache: true
+
+      - name: Generate files
+        run: pnpm run generate
+
+
+      - name: Get current date
+        id: date
+        run: echo "date=$(date +'%Y.%m.%d')" >> $GITHUB_ENV
+
+      - name: Generate release
+        uses: softprops/action-gh-release@v3
+        with:
+          name: ${{ steps.date.outputs.date }}-${{ github.run_number }}
+          tag_name: ${{ steps.date.outputs.date }}-${{ github.run_number }}
+          files: |
+            dist/*.csv
