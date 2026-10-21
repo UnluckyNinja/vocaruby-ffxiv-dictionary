@@ -1,6 +1,6 @@
 # Vocabulary Ruby FFXIV 词典
 
-用于 [Vocabulary Ruby](github.com/UnluckyNinja/vocabulary-ruby)  
+用于 [Vocabulary Ruby](https://github.com/UnluckyNinja/vocabulary-ruby)  
 
 ## 使用方法
 <pre>
